@@ -6,6 +6,10 @@ highlighter for interactive fiction text file
 
 ![](https://github.com/DiscreteTom/ift-highlighter/blob/master/img/readme.png)
 
+### 1.2.0
+
+add highlighter for `{command: command value @params=''}`
+
 ### 1.1.0
 
 add highlighter for `{{ value }}`
