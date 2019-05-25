@@ -7,13 +7,19 @@
 		},
 		{
 			"include": "#comments"
+		},
+		{
+			"include": "#story-tags"
+		},
+		{
+			"include": "#value-refs"
 		}
 	],
 	"repository": {
-		"commands": {
+		"story-tags": {
 			"patterns": [
 				{
-					"match": "(\\{)(\\s*[^{}:]+)\\s*(:\\s*([^}]+))?(\\})",
+					"match": "(\\{)\\s*(\\d+)(\\s*:\\s*([^ \\f\\n\\r\\t\\v\\}]+))?\\s*(\\})",
 					"captures": {
 						"1": {
 							"name": "keyword.control.ift"
@@ -28,9 +34,45 @@
 							"name": "keyword.control.ift"
 						}
 					}
-				},
+				}
+			]
+		},
+		"commands": {
+			"patterns": [
 				{
-					"match": "(\\{\\{)(\\s*[^}:]+\\s*)(\\}\\})",
+					"begin": "(\\{)(\\s*[a-zA-Z][^ \\f\\n\\r\\t\\v:\\}]*)\\s*(:\\s*([^}@]+))?",
+					"end": "(\\})",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.control.ift"
+						},
+						"2": {
+							"name": "variable.parameter.ift"
+						},
+						"4": {
+							"name": "entity.other.attribute-name.ift"
+						}
+					},
+					"endCaptures": {
+						"1": {
+							"name": "keyword.control.ift"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#command-attributes"
+						},
+						{
+							"include": "#strings"
+						}
+					]
+				}
+			]
+		},
+		"value-refs": {
+			"patterns": [
+				{
+					"match": "(\\{\\{)(\\s*[^ \\f\\n\\r\\t\\v\\}]+\\s*)(\\}\\})",
 					"captures": {
 						"1": {
 							"name": "keyword.control.ift"
@@ -48,9 +90,50 @@
 		"comments": {
 			"patterns": [
 				{
-					"name": "comment.line.double-slash.ifc",
+					"name": "comment.line.double-slash.ift",
 					"begin": "#",
 					"end": "\n"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.ift",
+					"begin": "\"",
+					"end": "\"",
+					"patterns": [
+						{
+							"name": "constant.character.escape.ift",
+							"match": "\\\\."
+						}
+					]
+				},
+				{
+					"name": "string.quoted.single.ift",
+					"begin": "'",
+					"end": "'",
+					"patterns": [
+						{
+							"name": "constant.character.escape.ift",
+							"match": "\\\\."
+						}
+					]
+				}
+			]
+		},
+		"command-attributes": {
+			"patterns": [
+				{
+					"match": "(@\\w+)\\s*=\\s*('[^']*')",
+					"captures": {
+						"1": {
+							"name": "keyword.control.ift"
+						},
+						"2": {
+							"name": "string.quoted.single.ift"
+						}
+					}
 				}
 			]
 		}
