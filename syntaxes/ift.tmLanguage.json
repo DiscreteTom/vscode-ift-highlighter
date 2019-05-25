@@ -13,7 +13,7 @@
 		"commands": {
 			"patterns": [
 				{
-					"match": "(\\{)([^}:]+)\\s*(:\\s*([^}]+))?(\\})",
+					"match": "(\\{)(\\s*[^{}:]+)\\s*(:\\s*([^}]+))?(\\})",
 					"captures": {
 						"1": {
 							"name": "keyword.control.ift"
@@ -25,6 +25,20 @@
 							"name": "entity.other.attribute-name.ift"
 						},
 						"5": {
+							"name": "keyword.control.ift"
+						}
+					}
+				},
+				{
+					"match": "(\\{\\{)(\\s*[^}:]+\\s*)(\\}\\})",
+					"captures": {
+						"1": {
+							"name": "keyword.control.ift"
+						},
+						"2": {
+							"name": "entity.other.attribute-name.ift"
+						},
+						"3": {
 							"name": "keyword.control.ift"
 						}
 					}
