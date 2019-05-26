@@ -40,7 +40,7 @@
 		"commands": {
 			"patterns": [
 				{
-					"begin": "(\\{)(\\s*[a-zA-Z][^ \\f\\n\\r\\t\\v:\\}]*)\\s*(:\\s*([^}@]+))?",
+					"begin": "(\\{)(\\s*[a-zA-Z][^ \\f\\n\\r\\t\\v:\\}]*)\\s*(:\\s*(([^}@'\"]+|('[^']*'|\"[^\"]*\")|\\s)+))?",
 					"end": "(\\})",
 					"beginCaptures": {
 						"1": {
@@ -50,7 +50,10 @@
 							"name": "variable.parameter.ift"
 						},
 						"4": {
-							"name": "entity.other.attribute-name.ift"
+							"name": "entity.name.function.ift"
+						},
+						"6": {
+							"name": "string.quoted.single.ift"
 						}
 					},
 					"endCaptures": {
@@ -61,9 +64,6 @@
 					"patterns": [
 						{
 							"include": "#command-attributes"
-						},
-						{
-							"include": "#strings"
 						}
 					]
 				}
@@ -125,7 +125,7 @@
 		"command-attributes": {
 			"patterns": [
 				{
-					"match": "(@\\w+)\\s*=\\s*('[^']*')",
+					"match": "(@\\w+)\\s*=\\s*('[^']*'|\"[^\"]*\")",
 					"captures": {
 						"1": {
 							"name": "keyword.control.ift"
