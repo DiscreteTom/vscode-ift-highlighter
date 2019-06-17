@@ -25,6 +25,17 @@
             "language": "ift",
             "scopeName": "source.ift",
             "path": "./syntaxes/ift.tmLanguage.json"
-        }]
+        }],
+        "snippets": [
+            {
+                "language": "ift",
+                "path": "./snippets/ift.code-snippets"
+            }
+        ],
+        "configurationDefaults": {
+            "[ift]": {
+                "editor.snippetSuggestions": "top"
+            }
+        }
     }
 }

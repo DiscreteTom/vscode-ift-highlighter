@@ -3,139 +3,48 @@
 	"name": "interactive fiction text",
 	"patterns": [
 		{
-			"include": "#commands"
+			"include": "#ift-codes"
 		},
 		{
-			"include": "#comments"
-		},
-		{
-			"include": "#story-tags"
+			"include": "text.xml"
 		},
 		{
 			"include": "#value-refs"
 		}
 	],
 	"repository": {
-		"story-tags": {
+		"ift-codes":{
+			"begin": "<(code)>",
+			"end": "</(code)>",
 			"patterns": [
 				{
-					"match": "(\\{)\\s*(\\d+)(\\s*:\\s*([^ \\f\\n\\r\\t\\v\\}]+))?\\s*(\\})",
-					"captures": {
-						"1": {
-							"name": "keyword.control.ift"
-						},
-						"2": {
-							"name": "variable.parameter.ift"
-						},
-						"4": {
-							"name": "entity.other.attribute-name.ift"
-						},
-						"5": {
-							"name": "keyword.control.ift"
-						}
-					}
+					"include": "source.python"
 				}
-			]
-		},
-		"commands": {
-			"patterns": [
-				{
-					"begin": "(\\{)(\\s*[a-zA-Z][^ \\f\\n\\r\\t\\v:\\}]*)\\s*(:\\s*(([^}@'\"]+|('[^']*'|\"[^\"]*\")|\\s)+))?",
-					"end": "(\\})",
-					"beginCaptures": {
-						"1": {
-							"name": "keyword.control.ift"
-						},
-						"2": {
-							"name": "variable.parameter.ift"
-						},
-						"4": {
-							"name": "entity.name.function.ift"
-						},
-						"6": {
-							"name": "string.quoted.single.ift"
-						}
-					},
-					"endCaptures": {
-						"1": {
-							"name": "keyword.control.ift"
-						}
-					},
-					"patterns": [
-						{
-							"include": "#command-attributes"
-						}
-					]
+			],
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.ift"
 				}
-			]
+			},
+			"endCaptures": {
+				"1": {
+					"name": "keyword.control.ift"
+				}
+			}
 		},
 		"value-refs": {
-			"patterns": [
-				{
-					"match": "(\\{\\{)(\\s*[^ \\f\\n\\r\\t\\v\\}]+\\s*)(\\}\\})",
-					"captures": {
-						"1": {
-							"name": "keyword.control.ift"
-						},
-						"2": {
-							"name": "entity.other.attribute-name.ift"
-						},
-						"3": {
-							"name": "keyword.control.ift"
-						}
-					}
-				}
-			]
-		},
-		"comments": {
-			"patterns": [
-				{
-					"name": "comment.line.double-slash.ift",
-					"begin": "#",
-					"end": "\n"
-				}
-			]
-		},
-		"strings": {
-			"patterns": [
-				{
-					"name": "string.quoted.double.ift",
-					"begin": "\"",
-					"end": "\"",
-					"patterns": [
-						{
-							"name": "constant.character.escape.ift",
-							"match": "\\\\."
-						}
-					]
+			"match": "(\\{\\{)(\\s*[^ \\f\\n\\r\\t\\v\\}]+\\s*)(\\}\\})",
+			"captures": {
+				"1": {
+					"name": "keyword.control.ift"
 				},
-				{
-					"name": "string.quoted.single.ift",
-					"begin": "'",
-					"end": "'",
-					"patterns": [
-						{
-							"name": "constant.character.escape.ift",
-							"match": "\\\\."
-						}
-					]
+				"2": {
+					"name": "entity.other.attribute-name.ift"
+				},
+				"3": {
+					"name": "keyword.control.ift"
 				}
-			]
-		},
-		"command-attributes": {
-			"patterns": [
-				{
-					"match": "(@\\w+)\\s*=\\s*('[^']*'|\"[^\"]*\")",
-					"captures": {
-						"1": {
-							"name": "keyword.control.ift"
-						},
-						"2": {
-							"name": "string.quoted.single.ift"
-						}
-					}
-				}
-			]
+			}
 		}
 	},
 	"scopeName": "source.ift"

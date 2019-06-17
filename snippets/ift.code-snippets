@@ -1,0 +1,66 @@
+{
+	"story": {
+		"prefix": "story",
+		"body": [
+			"<story name=\"$1\">",
+			"$0",
+			"</story>",
+		]
+	},
+	"story-tag": {
+		"prefix": "<story>",
+		"body": [
+			"<story name=\"$1\">",
+			"$0",
+			"</story>",
+		]
+	},
+	"if": {
+		"prefix": "if",
+		"body": [
+			"<if confition=\"$1\">",
+			"$0",
+			"</if>",
+		]
+	},
+	"if-tag": {
+		"prefix": "<if>",
+		"body": [
+			"<if confition=\"$1\">",
+			"$0",
+			"</if>",
+		]
+	},
+	"while": {
+		"prefix": "while",
+		"body": [
+			"<while condition=\"$1\">",
+			"$0",
+			"</while>",
+		]
+	},
+	"while-tag": {
+		"prefix": "<while>",
+		"body": [
+			"<while condition=\"$1\">",
+			"$0",
+			"</while>",
+		]
+	},
+	"code": {
+		"prefix": "code",
+		"body": [
+			"<code>",
+			"$0",
+			"</code>",
+		]
+	},
+	"code-tag": {
+		"prefix": "<code>",
+		"body": [
+			"<code>",
+			"$0",
+			"</code>",
+		]
+	}
+}
