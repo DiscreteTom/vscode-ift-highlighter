@@ -1,3 +1,0 @@
-{0: story-begin}
-{bgm: 1.mp3}
-welcome to the fantasy world, {{ player.name }}!
