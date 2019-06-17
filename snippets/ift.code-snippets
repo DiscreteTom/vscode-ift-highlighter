@@ -3,7 +3,7 @@
 		"prefix": "story",
 		"body": [
 			"<story name=\"$1\">",
-			"$0",
+			"\t$0",
 			"</story>",
 		]
 	},
@@ -11,7 +11,7 @@
 		"prefix": "<story>",
 		"body": [
 			"<story name=\"$1\">",
-			"$0",
+			"\t$0",
 			"</story>",
 		]
 	},
@@ -19,7 +19,7 @@
 		"prefix": "if",
 		"body": [
 			"<if confition=\"$1\">",
-			"$0",
+			"\t$0",
 			"</if>",
 		]
 	},
@@ -27,7 +27,7 @@
 		"prefix": "<if>",
 		"body": [
 			"<if confition=\"$1\">",
-			"$0",
+			"\t$0",
 			"</if>",
 		]
 	},
@@ -35,7 +35,7 @@
 		"prefix": "while",
 		"body": [
 			"<while condition=\"$1\">",
-			"$0",
+			"\t$0",
 			"</while>",
 		]
 	},
@@ -43,7 +43,7 @@
 		"prefix": "<while>",
 		"body": [
 			"<while condition=\"$1\">",
-			"$0",
+			"\t$0",
 			"</while>",
 		]
 	},
@@ -51,7 +51,7 @@
 		"prefix": "code",
 		"body": [
 			"<code>",
-			"$0",
+			"\t$0",
 			"</code>",
 		]
 	},
@@ -59,8 +59,22 @@
 		"prefix": "<code>",
 		"body": [
 			"<code>",
-			"$0",
+			"\t$0",
 			"</code>",
 		]
-	}
+	},
+	"input": {
+		"prefix": "input",
+		"body": [
+			"<input>$1</input>",
+			"$0"
+		]
+	},
+	"input-tag": {
+		"prefix": "<input>",
+		"body": [
+			"<input>$1</input>",
+			"$0"
+		]
+	},
 }
