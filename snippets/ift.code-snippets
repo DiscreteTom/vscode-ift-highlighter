@@ -1,4 +1,11 @@
 {
+	"include": {
+		"prefix": "#include",
+		"body": [
+			"#include $1",
+			"$0"
+		]
+	},
 	"story": {
 		"prefix": "story",
 		"body": [
