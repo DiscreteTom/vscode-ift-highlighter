@@ -1,7 +1,19 @@
 # Change Log
-All notable changes to the "ift-highlighter" extension will be documented in this file.
-
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
 ## [Unreleased]
-- Initial release
+
+## [0.1.0] - 2019-07-14
+
+### Added
+
+- code snippets:
+  - include
+  - story
+  - if
+  - while
+  - code
+  - input
+- syntax highlighting:
+  - include
+  - code
+  - value reference
