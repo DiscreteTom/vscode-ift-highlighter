@@ -1,7 +1,7 @@
 {
     "name": "ift-highlighter",
     "displayName": "ift-highlighter",
-    "description": "",
+    "description": "highlighter for interactive fiction text",
     "version": "0.1.0",
     "publisher": "DiscreteTom",
     "repository": {
