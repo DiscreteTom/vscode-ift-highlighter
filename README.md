@@ -1,19 +1,32 @@
 # ift-highlighter
 
-highlighter for interactive fiction text file
+Highlighter for ift file(interactive fiction text).
 
-## Features
+## Usage
 
-![](https://github.com/DiscreteTom/ift-highlighter/blob/master/img/readme.png)
+Ift is a kind of file based on XML, its a part of [if-maker](https://github.com/DiscreteTom/if-maker).
 
-### 1.2.0
+This extension provide code snippets and syntax highlighting for ift file.
 
-add highlighter for `{command: command value @params=''}`
+## ift file format
 
-### 1.1.0
+Though ift is based on XML, you don't have to write `<?xml version="1.0"?>` and root element, if-maker will add it for you.
 
-add highlighter for `{{ value }}`
+```xml
+#include otherIftFile
 
-### 1.0.0
+<story name="story-id">
+	story text here
+	<if condition="python code here">
+		conditional story text here
+	</if>
+	<while condition="python code here">
+		repeat story text here
+	</while>
+	{{ value reference here }}
+	<code>python code here</code>
+	<input>variable-name</input>
+</story>
+```
 
-Initial release of ift-highlighter
+`#include` field can include other ift files in current file. Ift file name can not contain spaces. `#include` must be the top a ift file. After `#include` there must be an empty line.
