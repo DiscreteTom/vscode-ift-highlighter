@@ -9,7 +9,7 @@
 	"story": {
 		"prefix": "story",
 		"body": [
-			"<story name=\"$1\">",
+			"<story id=\"$1\">",
 			"\t$0",
 			"</story>",
 		]
@@ -17,7 +17,7 @@
 	"story-tag": {
 		"prefix": "<story>",
 		"body": [
-			"<story name=\"$1\">",
+			"<story id=\"$1\">",
 			"\t$0",
 			"</story>",
 		]
