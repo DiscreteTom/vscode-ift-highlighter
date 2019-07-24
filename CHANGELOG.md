@@ -2,24 +2,30 @@
 
 ## [Unreleased]
 
+## [0.1.2] - 2019-07-24
+
+### Fixed
+
+- IFT sample in README.md
+
 ## [0.1.1] - 2019-07-16
 
 ### Changed
 
-- attribute `name` of story tag is renamed to `id`
+- Attribute `name` of `story` tag is renamed to `id`.
 
 ## [0.1.0] - 2019-07-14
 
 ### Added
 
-- code snippets:
+- Code snippets:
   - include
   - story
   - if
   - while
   - code
   - input
-- syntax highlighting:
+- Syntax highlighting:
   - include
   - code
   - value reference

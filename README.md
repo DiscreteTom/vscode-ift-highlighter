@@ -1,21 +1,21 @@
 # ift-highlighter
 
-Highlighter for ift file(interactive fiction text).
+Highlighter for IFT file(interactive fiction text).
 
 ## Usage
 
-Ift is a kind of file based on XML, its a part of [if-maker](https://github.com/DiscreteTom/if-maker).
+IFT is a kind of file based on XML, its a part of [if-maker](https://github.com/DiscreteTom/if-maker).
 
-This extension provide code snippets and syntax highlighting for ift file.
+This extension provide code snippets and syntax highlighting for IFT file.
 
-## ift file format
+## IFT file format
 
-Though ift is based on XML, you don't have to write `<?xml version="1.0"?>` and root element, if-maker will add it for you.
+Though IFT is based on XML, you don't have to write `<?xml version="1.0"?>` and root element, if-maker will add it for you.
 
 ```xml
 #include otherIftFile
 
-<story name="story-id">
+<story id="story-id">
 	story text here
 	<if condition="python code here">
 		conditional story text here
@@ -29,4 +29,4 @@ Though ift is based on XML, you don't have to write `<?xml version="1.0"?>` and 
 </story>
 ```
 
-`#include` field can include other ift files in current file. Ift file name can not contain spaces. `#include` must be the top a ift file. After `#include` there must be an empty line.
+`#include` field can include other IFT files in current file. IFT file name can not contain spaces. `#include` must be the top a IFT file. After `#include` there must be an empty line.
