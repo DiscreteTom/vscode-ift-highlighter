@@ -2,6 +2,16 @@
 
 ## [Unreleased]
 
+## [0.1.3] - 2019-08-12
+
+### Added
+
+- Support for including many IFT files in one line.
+
+### Fixed
+
+- Code snippets for `if` tag.
+
 ## [0.1.2] - 2019-07-24
 
 ### Fixed

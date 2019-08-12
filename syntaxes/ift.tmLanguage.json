@@ -17,7 +17,7 @@
 	],
 	"repository": {
 		"ift-include": {
-			"match": "^(#include)\\s*(\\S+)\\s*$",
+			"match": "^(#include)\\s*((\\S+\\s*)+)$",
 			"captures": {
 				"1": {
 					"name": "keyword.control.ift"

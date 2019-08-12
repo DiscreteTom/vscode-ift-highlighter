@@ -13,7 +13,7 @@ This extension provide code snippets and syntax highlighting for IFT file.
 Though IFT is based on XML, you don't have to write `<?xml version="1.0"?>` and root element, if-maker will add it for you.
 
 ```xml
-#include otherIftFile
+#include file1.ift file2.ift
 
 <story id="story-id">
 	story text here
@@ -29,4 +29,4 @@ Though IFT is based on XML, you don't have to write `<?xml version="1.0"?>` and 
 </story>
 ```
 
-`#include` field can include other IFT files in current file. IFT file name can not contain spaces. `#include` must be the top a IFT file. After `#include` there must be an empty line.
+`#include` field can include other IFT files in current file. IFT file name can not contain spaces.
